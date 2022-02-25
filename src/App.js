@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import SetIntervalExample from './SetIntervalExample';
+import { useState } from 'react';
 
 function App() {
+  const [display, setDisplay] = useState(false);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,8 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => { setDisplay(!display) }}>Toggle Component</button>
+        {display && <SetIntervalExample />}
       </header>
     </div>
   );
